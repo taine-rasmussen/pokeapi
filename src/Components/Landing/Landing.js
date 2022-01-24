@@ -5,7 +5,7 @@ import './Landing.css'
 import { LandingHeader } from './LandingHeader'
 import { LandingSearch } from './LandingSearch'
 
-const Landing = (props) => {
+export const Landing = (props) => {
 
    const {
 		input,
@@ -14,6 +14,7 @@ const Landing = (props) => {
       singlePokemon,
       setSinglePokemon,
       setFormResponse,
+      setView
 	} = props
 
    // Updates allPokemon state with all pokemon data
@@ -36,9 +37,8 @@ const Landing = (props) => {
             setSinglePokemon={setSinglePokemon}
             singlePokemon={singlePokemon}
             setFormResponse={setFormResponse}
+            setView={setView}
          />
       </div>
    )
 }
-
-export default Landing;

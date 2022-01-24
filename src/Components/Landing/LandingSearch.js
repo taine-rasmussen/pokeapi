@@ -3,31 +3,29 @@ import React, { useState, useEffect } from 'react'
 export const LandingSearch = (props) => {
 
 	const {
-		input,
-		setInput,
 		setSinglePokemon,
 		singlePokemon,
 		setFormResponse
 	} = props
+
+  const [input, setInput] = useState('');
+
 
 	// updates input with string from user input
 	const handleChange = (e) => {
 		setInput(e.target.value)
 	}
 
-	// GET request to pokeAPI with users search / updates singlePokemon/formResponse state with response
+	// GET request to pokeAPI with users search input / updates singlePokemon/formResponse state with response
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		fetch(`http://pokeapi.co/api/v2/pokemon/${input}`)
 			 .then(response => response.json())
-			 .then(pokemon => console.log('pokemon', pokemon.id))
-
-		
-			// fetch(`https://pokeapi.co/api/v2/pokemon-form/${singlePokemon.id}/`) failing to find .id - try move this call to an useEffect on Dashboard load
-			//  .then(response => response.json())
-			//  .then(form => console.log('form', form))
-		setInput('')
-		
+			 .then(pokemon => setSinglePokemon(pokemon))
+		fetch(`https://pokeapi.co/api/v2/pokemon-form/${input}/`)
+			 .then(response => response.json())
+			 .then(form => setFormResponse(form))
+			setInput('')
 	}
 
    return (
