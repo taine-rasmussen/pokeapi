@@ -5,7 +5,8 @@ export const LandingSearch = (props) => {
 	const {
 		setSinglePokemon,
 		singlePokemon,
-		setFormResponse
+		setFormResponse,
+		setView,
 	} = props
 
   const [input, setInput] = useState('');
@@ -28,6 +29,17 @@ export const LandingSearch = (props) => {
 			setInput('')
 	}
 
+	const getRandomPokemon = () => {
+		const randomNum = Math.floor(Math.random() * 151)
+		fetch(`http://pokeapi.co/api/v2/pokemon/${randomNum}`)
+			.then(response => response.json())
+			.then(pokemon => setSinglePokemon(pokemon))
+		fetch(`https://pokeapi.co/api/v2/pokemon-form/${randomNum}/`)
+			.then(response => response.json())
+			.then(form => setFormResponse(form))
+		setView(true)
+	}
+
    return (
       <div className="search-container">
          <div className="search-card-container">
@@ -43,8 +55,8 @@ export const LandingSearch = (props) => {
                      onChange={(e) => {handleChange(e)}}
                   /> 
                   <button>Search</button>
-									<img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/143.png'/>
                </form>
+                  <button onClick={getRandomPokemon}>Random</button>
             </div>
          </div>
          

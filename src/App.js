@@ -8,7 +8,7 @@ import { Dashboard } from './Components/Dashboard/Dashboard'
 function App() {
 
 	 const [allPokemon, setAllPokemon] = useState();
-	 const [singlePokemon, setSinglePokemon] = useState();
+	 const [singlePokemon, setSinglePokemon] = useState(null);
 	 const [formResponse, setFormResponse] = useState()
    const [view, setView] = useState(false)
 
@@ -21,6 +21,7 @@ function App() {
         singlePokemon={singlePokemon}
         setSinglePokemon={setSinglePokemon}
         formResponse={formResponse}
+        setView={setView}
         setFormResponse={setFormResponse} 
       /> : <Landing 
         setAllPokemon={setAllPokemon}

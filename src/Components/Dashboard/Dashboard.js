@@ -7,22 +7,23 @@ export const Dashboard = (props) => {
       singlePokemon,
       setSinglePokemon,
       setFormResponse,
-      formResponse
+      formResponse,
+      setView
 	} = props
 
 
-useEffect(() => {
-   let id = singlePokemon.id
- fetch(`http://pokeapi.co/api/v2/pokemon/${id}`)
-			 .then(response => response.json())
-			 .then(form => setFormResponse(form))
+// useEffect(() => {
+//    let id = singlePokemon.id
+//  fetch(`http://pokeapi.co/api/v2/pokemon/${id}`)
+// 			 .then(response => response.json())
+// 			 .then(form => setFormResponse(form))
 
-   console.log(formResponse)
-}, [])
+//    console.log(formResponse)
+// }, [])
 
    return (
       <div>
-         
+       {singlePokemon == null ? 'loading...' : singlePokemon.name}
       </div>
    )
 }

@@ -28,6 +28,10 @@
   padding-left: 3rem;
 }
 
+.landing-header-menu h3:hover {
+  cursor: pointer;
+}
+
 .search-container {
   height: 85vh;
   border: 4px solid #000;
