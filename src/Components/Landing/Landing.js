@@ -14,7 +14,8 @@ export const Landing = (props) => {
       singlePokemon,
       setSinglePokemon,
       setFormResponse,
-      setView
+      setView,
+      setPokemonView
 	} = props
 
    // Updates allPokemon state with all pokemon data
@@ -30,7 +31,10 @@ export const Landing = (props) => {
 
    return(
       <div className="landing-container">
-         <LandingHeader />
+         <LandingHeader
+            setPokemonView={setPokemonView}
+            setView={setView}
+         />
          <LandingSearch 
             setInput={setInput}
             input={input}
@@ -38,6 +42,7 @@ export const Landing = (props) => {
             singlePokemon={singlePokemon}
             setFormResponse={setFormResponse}
             setView={setView}
+            setPokemonView={setPokemonView}
          />
       </div>
    )

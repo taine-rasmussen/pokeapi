@@ -7,6 +7,7 @@ export const LandingSearch = (props) => {
 		singlePokemon,
 		setFormResponse,
 		setView,
+		setPokemonView
 	} = props
 
   const [input, setInput] = useState('');
@@ -40,6 +41,7 @@ export const LandingSearch = (props) => {
 			.then(response => response.json())
 			.then(form => setFormResponse(form))
 		setView(true)
+		setPokemonView(true)
 	}
 
    return (

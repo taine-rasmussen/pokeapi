@@ -11,8 +11,8 @@ function App() {
 	 const [singlePokemon, setSinglePokemon] = useState(null);
 	 const [formResponse, setFormResponse] = useState()
    const [view, setView] = useState(false)
+   const [pokemonView, setPokemonView] = useState(false)
 
-  console.log(allPokemon)
 
   return (
     <div className="App">
@@ -23,7 +23,9 @@ function App() {
         setSinglePokemon={setSinglePokemon}
         formResponse={formResponse}
         setView={setView}
-        setFormResponse={setFormResponse} 
+        setFormResponse={setFormResponse}
+        setPokemonView={setPokemonView}
+        pokemonView={pokemonView}
       /> : <Landing 
         setAllPokemon={setAllPokemon}
         allPokemon={allPokemon}
@@ -32,6 +34,7 @@ function App() {
         formResponse={formResponse}
         setFormResponse={setFormResponse}
         setView={setView}
+        setPokemonView={setPokemonView}
       />}
     </div>
   );

@@ -1,4 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
+import './Dashboard.css'
+
+//Components
+import { AllPokemon } from './AllPokemon'
 
 export const Dashboard = (props) => {
 
@@ -8,12 +12,16 @@ export const Dashboard = (props) => {
       setSinglePokemon,
       setFormResponse,
       formResponse,
-      setView
+      setView,
+      allPokemon,
+      pokemonView,
+      setPokemonView,
 	} = props
+
 
    return (
       <div className="dashboard-conatiner">
-       {singlePokemon == null ? 'loading...' : singlePokemon.name}
+         {pokemonView ? `haven't done this yet` :  <AllPokemon allPokemon={allPokemon}s/>}
       </div>
    )
 }
