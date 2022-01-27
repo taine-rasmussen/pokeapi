@@ -12,7 +12,6 @@ function App() {
 	 const [formResponse, setFormResponse] = useState()
    const [view, setView] = useState(false)
 
-
   return (
     <div className="App">
 
@@ -32,8 +31,6 @@ function App() {
         setFormResponse={setFormResponse}
         setView={setView}
       />}
-
-     
     </div>
   );
 }
