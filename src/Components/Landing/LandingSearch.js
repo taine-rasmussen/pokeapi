@@ -17,7 +17,7 @@ export const LandingSearch = (props) => {
 		setInput(e.target.value)
 	}
 
-	// GET request to pokeAPI with users search input / updates singlePokemon/formResponse state with response
+	// GET request to pokeAPI with users search input / updates singlePokemon/formResponse state with response. Redirects to Dashboard component
 	const handleSubmit = (e) => {
 		e.preventDefault()
 		fetch(`http://pokeapi.co/api/v2/pokemon/${input}`)
@@ -27,8 +27,10 @@ export const LandingSearch = (props) => {
 			 .then(response => response.json())
 			 .then(form => setFormResponse(form))
 			setInput('')
+			setView(true)
 	}
 
+	// Generates random num < 151 updating singlePokemon/formResponse state with response. Redirects to Dashboard component
 	const getRandomPokemon = () => {
 		const randomNum = Math.floor(Math.random() * 151)
 		fetch(`http://pokeapi.co/api/v2/pokemon/${randomNum}`)

@@ -12,9 +12,10 @@ function App() {
 	 const [formResponse, setFormResponse] = useState()
    const [view, setView] = useState(false)
 
+  console.log(allPokemon)
+
   return (
     <div className="App">
-
       {view ? <Dashboard
         setAllPokemon={setAllPokemon}
         allPokemon={allPokemon}

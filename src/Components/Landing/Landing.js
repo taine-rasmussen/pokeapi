@@ -19,7 +19,7 @@ export const Landing = (props) => {
 
    // Updates allPokemon state with all pokemon data
 	const getData = () => {
-		 fetch('http://pokeapi.co/api/v2/pokemon/')
+		 fetch('http://pokeapi.co/api/v2/pokemon/?limit=151')
 			 .then(response => response.json())
 			 .then(allpokemon => setAllPokemon(allpokemon))
 	 }
