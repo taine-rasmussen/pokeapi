@@ -8,9 +8,11 @@ export const AllPokemon = (props) => {
 
    const [urls, setUrls] = useState([])
 
-   console.log('test', allPokemon)
 
-
+   // Need a function maps over each pokemon calling the form url and getting the sprite path to be used as an image
+   // Is there an easier way - is there an API just for images that would save this work?
+   // ??????
+// ternay the map to check for allPokemon to be defined before mapping - all pokemon state is loading slower becasuse getData has been moved to a useEffect inside Dashboard
    return (
       <div className='allpokemon-container'>
          {allPokemon.results.map((pokemon, i) => {

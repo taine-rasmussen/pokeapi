@@ -18,17 +18,6 @@ export const Landing = (props) => {
       setPokemonView
 	} = props
 
-   // Updates allPokemon state with all pokemon data
-	const getData = () => {
-		 fetch('http://pokeapi.co/api/v2/pokemon/?limit=151')
-			 .then(response => response.json())
-			 .then(allpokemon => setAllPokemon(allpokemon))
-	 }
-	 // gets data on component load
-	 useEffect(() => {
-		 getData()
-	 }, [])
-
    return(
       <div className="landing-container">
          <LandingHeader

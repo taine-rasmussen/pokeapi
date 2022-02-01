@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './Dashboard.css'
 
 //Components
 import { AllPokemon } from './AllPokemon'
+import { SinglePokemon } from './SinglePokemon'
+
 
 export const Dashboard = (props) => {
 
@@ -16,12 +18,25 @@ export const Dashboard = (props) => {
       allPokemon,
       pokemonView,
       setPokemonView,
+      getData
 	} = props
 
+   useEffect(() => {
+      getData()
+   }, [])
 
    return (
       <div className="dashboard-conatiner">
-         {pokemonView ? `haven't done this yet` :  <AllPokemon allPokemon={allPokemon}s/>}
+         {pokemonView ? (
+            <SinglePokemon
+               singlePokemon={singlePokemon}
+               formResponse={formResponse}
+            />
+            ) : (
+            <AllPokemon
+             allPokemon={allPokemon}s
+            />
+            )}
       </div>
    )
 }

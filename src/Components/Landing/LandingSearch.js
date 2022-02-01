@@ -29,6 +29,7 @@ export const LandingSearch = (props) => {
 			 .then(form => setFormResponse(form))
 			setInput('')
 			setView(true)
+			setPokemonView(true)
 	}
 
 	// Generates random num < 151 updating singlePokemon/formResponse state with response. Redirects to Dashboard component
